@@ -15,9 +15,11 @@ public class Matrix {
     public Matrix sum(Matrix anotherMatrix) {
         return Matrices.sum(this, anotherMatrix);
     }
+
     public Matrix multiply(int n) {
         return Matrices.multiply(this, n);
     }
+
     public Matrix multiply(Matrix anotherMatrix) {
         return Matrices.multiply(this, anotherMatrix);
     }
