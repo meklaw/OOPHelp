@@ -6,10 +6,15 @@ public class Matrix {
     private final int[][] values;
 
     public Matrix(int height, int width, int[][] values) {
+        if (height < 1 || width < 1)
+            throw new RuntimeException("матрица должна иметь натуральное число столбцов и строк");
+
+        if (values == null)
+            throw new RuntimeException("значения матрицы должны быть определены");
+
         this.height = height;
         this.width = width;
         this.values = values;
-
     }
 
     public Matrix sum(Matrix anotherMatrix) {
