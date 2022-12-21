@@ -23,8 +23,18 @@ public final class Matrices {
     }
 
     public static Matrix multiply(Matrix matrix, int n) {
-//        TODO
-        return null;
+        int height = matrix.getHeight();
+        int width = matrix.getWidth();
+        int[][] values = new int[height][width];
+        int[][] aVal = matrix.getValues();
+
+        for (int y = 0; y < height; y++) {
+            for (int x = 0; x < width; x++) {
+                values[y][x] = aVal[y][x] * n;
+            }
+        }
+
+        return new Matrix(height, width, values);
     }
 
     public static Matrix multiply(Matrix aMatrix, Matrix bMatrix) {
