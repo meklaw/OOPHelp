@@ -38,7 +38,29 @@ public final class Matrices {
     }
 
     public static Matrix multiply(Matrix aMatrix, Matrix bMatrix) {
-//        TODO
-        return null;
+        if (aMatrix.getWidth() != bMatrix.getHeight())
+            throw new RuntimeException("число столбцов первой матрицы должно быть равно числу строк второй матрицы :с");
+
+        int height = aMatrix.getHeight();
+        int width = bMatrix.getWidth();
+        int[][] values = new int[height][width];
+
+        for (int y = 0; y < values.length; y++) {
+            for (int x = 0; x < values[y].length; x++) {
+                values[y][x] = multiplyMatixVal(aMatrix.getValues(), bMatrix.getValues(), y, x);
+            }
+        }
+
+        return new Matrix(height, width, values);
+    }
+
+    private static int multiplyMatixVal(int[][] aVal, int[][] bVal, int row, int col) {
+        int sumMatrixVal = 0;
+
+        for (int i = 0; i < bVal.length; i++) {
+            sumMatrixVal += aVal[row][i] * bVal[i][col];
+        }
+
+        return sumMatrixVal;
     }
 }

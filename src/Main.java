@@ -1,19 +1,37 @@
-import java.util.Collections;
 import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int h = sc.nextInt();
-        int w = sc.nextInt();
-        int ar[][] = new int[h][w];
-        for (int i = 0; i < h; i++) {
-            for (int j = 0; j < w; j++) {
-                ar[i][j] = sc.nextInt();
-            }
-        }
-        Matrix m1 = new Matrix(h,w, ar);
-        Matrix m2 = new Matrix(h, w, ar);
-        m1.sum(m2);
+        int h = 3;
+        int w = 3;
+        int a1[][] = {
+                {3, -1, 2},
+                {4, 2, 0},
+                {-5, 6, 1}
+        };
+        int a2[][] = {
+                {8, 1},
+                {7, 2},
+                {2, -3}
+        };
 
+
+        Matrix matrix1 = new Matrix(h, w, a1);
+        Matrix matrix2 = new Matrix(3, 2, a2);
+
+        matrix1.multiply(matrix2).print();
+
+
+
+        Matrix matrix3 = new Matrix(1, 3, new int[][]{
+                {3, -1, 2}
+        });
+        Matrix matrix4 = new Matrix(3, 1, new int[][]{
+                {8},
+                {7},
+                {2}
+        });
+
+        Matrices.multiply(matrix3, matrix4).print();
     }
 }
