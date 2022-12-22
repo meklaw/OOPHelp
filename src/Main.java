@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
         int h = 3;
@@ -20,7 +18,6 @@ public class Main {
         Matrix matrix2 = new Matrix(3, 2, a2);
 
         matrix1.multiply(matrix2).print();
-
 
 
         Matrix matrix3 = new Matrix(1, 3, new int[][]{

@@ -47,14 +47,14 @@ public final class Matrices {
 
         for (int y = 0; y < values.length; y++) {
             for (int x = 0; x < values[y].length; x++) {
-                values[y][x] = multiplyMatixVal(aMatrix.getValues(), bMatrix.getValues(), y, x);
+                values[y][x] = multiplyMatrixVal(aMatrix.getValues(), bMatrix.getValues(), y, x);
             }
         }
 
         return new Matrix(height, width, values);
     }
 
-    private static int multiplyMatixVal(int[][] aVal, int[][] bVal, int row, int col) {
+    private static int multiplyMatrixVal(int[][] aVal, int[][] bVal, int row, int col) {
         int sumMatrixVal = 0;
 
         for (int i = 0; i < bVal.length; i++) {
